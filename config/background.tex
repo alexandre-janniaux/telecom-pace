@@ -1,0 +1,40 @@
+\backgroundsetup{%
+ angle=0,
+ scale=1,
+ placement=bottom,
+ contents={%
+     \begin{tikzpicture}[overlay]%
+         [
+             normal line/.style={gray, very thin},
+             every node/.append style={black, align=center, opacity=1}
+         ]
+         \begin{scope}[on background layer]
+             %\foreach \y in {1,2,...,10} {
+             %  \draw[line] (0,0.71\y) -- (8.5in,0.71\y);
+             %}
+             %\node (t) [font=\LARGE, anchor=south] at ($(0,25.56)!1/2!(8.5in,25.56)$) {\thetitle};
+             %\node (d) [font=\large, anchor=south west, xshift=1.5em] at (0,25.6) {\today};
+             %\node (p) [font=\large, anchor=south east, xshift=-1.5em] at (8.5in,25.56) {p.~\thepage};
+%             \draw[line,color=red] (1.16in,0) -- (1.16in,23in);
+             \draw[line width=0.3pt,color=gray,step=0.5cm] (current page.south west) grid (current page.north east); % (0,-13in) grid (10in,10in);
+             %\draw[line width=0.5pt] (0,1.4in) (10in,1.4in);
+             %\foreach \y in {0.71,1.41,...,25.56}
+             %  \draw[normal lines] (0,\y) -- (8.5in,\y);
+             %\draw[normal lines] (1.25in,0) -- (1.25in,11in);
+             %\node (t) [font=\LARGE, anchor=south] at ($(0,25.56)!1/2!(8.5in,25.56)$) {\thetitle};
+             %\node (d) [font=\large, anchor=south west, xshift=1.5em] at (0,25.6) {\today};
+             %\node (p) [font=\large, anchor=south east, xshift=-1.5em] at (8.5in,25.56) {p.~\thepage};
+         \end{scope}
+     \end{tikzpicture}%
+     \begin{tikzpicture}[overlay]
+         [
+             normal line/.style={gray, very thin},
+             every node/.append style={black, align=center, opacity=1}
+         ]
+         \begin{scope}[on background layer]
+         \draw[line,color=red] (-2.95in,0) -- (-2.95in,23in);
+     \end{scope}
+     \end{tikzpicture}
+}}
+
+

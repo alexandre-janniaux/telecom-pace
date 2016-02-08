@@ -1,4 +1,4 @@
-\documentclass[letterpaper, 12pt]{article} % for letter size paper
+\documentclass[letterpaper, 12pt]{report} % for letter size paper
 % 215.9mm × 279.4mm
 
 \usepackage[T1]{fontenc}
@@ -6,54 +6,31 @@
 \usepackage[french]{babel}
 
 \usepackage{tikz, background, titling, kantlipsum, setspace}
-\usepackage[left=1.5in,right=0.25in,top=0.4in,bottom=.525in]{geometry}
+\usepackage[left=1.5in,right=0.25in,top=0.98in,bottom=.525in]{geometry}
 
 \usetikzlibrary{calc}
 \usetikzlibrary{shapes}
+\usetikzlibrary{backgrounds}
 %\tikzstyle{block} = [rectangle, draw, fill=blue!20, text width=5em, text centered, rounded corners, minimum height=4em] 
 \tikzstyle{line} = [draw, text centered]
 %\tikzstyle{output} = [fill=white]
 
-\newcommand{\stardelimiter}{{\begin{center}\vspace{0.5cm} $\star \star \star$\vspace{0.58cm}\end{center}}}
-
-\backgroundsetup{%
- position=current page.center,
- angle=0,
- scale=1,
- contents={%
-  \begin{tikzpicture}%
-    [
-      normal line/.style={gray, very thin},
-      every node/.append style={black, align=center, opacity=1}
-    ]
-    %\foreach \y in {1,2,...,10} {
-    %  \draw[line] (0,0.71\y) -- (8.5in,0.71\y);
-    %}
-    %\node (t) [font=\LARGE, anchor=south] at ($(0,25.56)!1/2!(8.5in,25.56)$) {\thetitle};
-    %\node (d) [font=\large, anchor=south west, xshift=1.5em] at (0,25.6) {\today};
-    %\node (p) [font=\large, anchor=south east, xshift=-1.5em] at (8.5in,25.56) {p.~\thepage};
-    \draw[line width=0.3pt,color=gray,step=0.5cm] (current page.south west) grid (current page.north east);
-    \draw[line,color=red] (2.16in,0) -- (2.16in,11in);
-    %\draw[line width=0.5pt] (0,1.4in) (10in,1.4in);
-    %\foreach \y in {0.71,1.41,...,25.56}
-    %  \draw[normal lines] (0,\y) -- (8.5in,\y);
-    %\draw[normal lines] (1.25in,0) -- (1.25in,11in);
-    %\node (t) [font=\LARGE, anchor=south] at ($(0,25.56)!1/2!(8.5in,25.56)$) {\thetitle};
-    %\node (d) [font=\large, anchor=south west, xshift=1.5em] at (0,25.6) {\today};
-    %\node (p) [font=\large, anchor=south east, xshift=-1.5em] at (8.5in,25.56) {p.~\thepage};
-  \end{tikzpicture}%
-}}
+\newcommand{\stardelimiter}{{\begin{center}\vspace{0.3cm} $\star \star \star$\vspace{0.3cm}\end{center}}}
 
 \renewcommand{\rmdefault}{augie}
 
-\title{My doc}
-\author{Me}
+\title{Quand la logique s'en mêle}
+\author{Alexandre Janniaux}
 
 \begin{document}
   %\pagestyle{empty}
   \doublespacing{}
   %\kant[1-6]{}
 
+  \maketitle
+
+  \include{config/background}
+  
 {\setstretch{1.963}\vspace{0pt}
 Longue attente devant la porte de la salle de cours. 
 Je discute non sans anxiété avec d'autres élèves de ma classe préparatoire --- taupins dans notre jargon --- qui vont bientôt subir le même sort que moi.
