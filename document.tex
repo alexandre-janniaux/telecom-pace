@@ -6,9 +6,15 @@
 \usepackage[french]{babel}
 
 \usepackage{tikz, background, titling, kantlipsum, setspace}
-\usepackage[left=1.5in,right=1.25in,top=1.025in,bottom=.125in]{geometry}
+\usepackage[left=1.5in,right=0.25in,top=0.4in,bottom=.525in]{geometry}
 
 \usetikzlibrary{calc}
+\usetikzlibrary{shapes}
+%\tikzstyle{block} = [rectangle, draw, fill=blue!20, text width=5em, text centered, rounded corners, minimum height=4em] 
+\tikzstyle{line} = [draw, text centered]
+%\tikzstyle{output} = [fill=white]
+
+\newcommand{\stardelimiter}{{\begin{center}\vspace{0.5cm} $\star \star \star$\vspace{0.58cm}\end{center}}}
 
 \backgroundsetup{%
  position=current page.center,
@@ -17,10 +23,18 @@
  contents={%
   \begin{tikzpicture}%
     [
-      normal lines/.style={gray, very thin},
+      normal line/.style={gray, very thin},
       every node/.append style={black, align=center, opacity=1}
     ]
-    \draw [line width=0.3pt,color=gray,step=0.5cm] (current page.south west) grid (current page.north east);
+    %\foreach \y in {1,2,...,10} {
+    %  \draw[line] (0,0.71\y) -- (8.5in,0.71\y);
+    %}
+    %\node (t) [font=\LARGE, anchor=south] at ($(0,25.56)!1/2!(8.5in,25.56)$) {\thetitle};
+    %\node (d) [font=\large, anchor=south west, xshift=1.5em] at (0,25.6) {\today};
+    %\node (p) [font=\large, anchor=south east, xshift=-1.5em] at (8.5in,25.56) {p.~\thepage};
+    \draw[line width=0.3pt,color=gray,step=0.5cm] (current page.south west) grid (current page.north east);
+    \draw[line,color=red] (2.16in,0) -- (2.16in,11in);
+    %\draw[line width=0.5pt] (0,1.4in) (10in,1.4in);
     %\foreach \y in {0.71,1.41,...,25.56}
     %  \draw[normal lines] (0,\y) -- (8.5in,\y);
     %\draw[normal lines] (1.25in,0) -- (1.25in,11in);
@@ -40,60 +54,63 @@
   \doublespacing{}
   %\kant[1-6]{}
 
-{\setstretch{1.965}
+{\setstretch{1.963}\vspace{0pt}
 Longue attente devant la porte de la salle de cours. 
 Je discute non sans anxiété avec d'autres élèves de ma classe préparatoire --- taupins dans notre jargon --- qui vont bientôt subir le même sort que moi.
-Quelle sensation étrange d'être anxieux spour la présentation d'un sujet que l'on connait probablement mieux que les autres?
+Quelle sensation étrange d'être anxieux pour la présentation d'un sujet que l'on connait probablement mieux que les autres?
 
 Ça y est, la porte s'ouvre, je rentre. Un petit regard vers l'autre table, où l'on parle beaucoup trop physique pour mon esprit d'informaticien, et je m'asseois en face de mon professeur de mathématiques.
 
--- ``Bonjour Alexandre, comment allez vous?''
+--- ``Bonjour Alexandre, comment allez vous?''
 % TODO: image M.Pauly
 
-Si l'on vous dit un jour, comme pour moi, que les professeurs du Lycée du Parc sont arrogants, méprisants, et ne font qu'essayer de vous écrasez, vous rierez de voir cette descritpion tomber devant ce professeur.
+Si l'on vous dit un jour, comme pour moi, que les professeurs du Lycée du Parc sont arrogants, méprisants, et ne font qu'essayer de vous écraser, vous rierez de voir cette descritpion tomber devant ce professeur.
 
 
 % FIXME: Typo Dialogue
--- ``Venons-en à ce pourquoi vous êtes ici, racontez-moi ce que vous faîtes''
+--- ``Venons-en à ce pourquoi vous êtes ici, racontez-moi ce que vous faîtes''
 
--- ``Oui! J'ai choisi un sujet d'informatique sur l'optimisation de la planification aérienne. On part d'un certain nombre d'avions, d'aéroports et de clients, et il faut trouver les meilleures configurations des vols en fonction de plusieurs critère.''
+--- ``Oui! J'ai choisi un sujet d'informatique sur l'optimisation de la planification aérienne. On part d'un certain nombre d'avions, d'aéroports et de clients, et il faut trouver les meilleures configurations des vols en fonction de plusieurs critères.''
 
--- ``C'est ambitieux comme sujet, vous savez comment vous y prendre?'' % FIXME : lyon "y"
+--- ``C'est ambitieux comme sujet, vous savez comment vous y prendre?'' % FIXME : lyon "y"
 
--- ``En réalité, j'ai surtout choisi ce sujet comme prétexte à l'utilisation d'algorithmes génétiques.''
+--- ``En réalité, j'ai surtout choisi ce sujet comme prétexte à l'utilisation d'algorithmes génétiques.''
 
--- ``Et vous avez déjà codé ce genre d'algorithme?.''
+--- ``Et vous avez déjà codé ce genre d'algorithme?.''
 
--- ``Oui, évidemment.''
+--- ``Oui, évidemment.''
 
 Pas besoin de dire que c'est le stress qui a répondu à ma place, même si j'aurai été capable d'expliquer comment cela fonctionne. 
 
--- ``Dans l'état actuel, une seule chose m'inquiète. 
+--- ``Dans l'état actuel, une seule chose m'inquiète. 
 		J'ai l'impression que je ne fais rien de théorique, et qu'expliquer le fonction de ces algorithmes sera non seulement pauvre, mais me prendra aussi tout mon temps de parole.''
 
--- ``Qu'est-ce que vous aimeriez ajouter?''
+--- ``Qu'est-ce que vous aimeriez ajouter?''
 
--- ``J'avais l'idée de mieux formaliser l'algorithme dans ce cas là et montrer que l'on converge probablement vers un optimum.''
+--- ``J'avais l'idée de mieux formaliser l'algorithme dans ce cas là et de montrer que l'on converge probablement vers un optimum.''
 
--- ``Vous savez, il vous reste beaucoup de temps, et vous n'avez pas encore énormément de reul sur votre projet.
+--- ``Vous savez, il vous reste beaucoup de temps, et vous n'avez pas encore énormément de recul sur votre projet.
 		Attendez un peu: à force de vivre avec le problème, vous serez à même de l'expliquer clairement et rapidement.
 		Essayez de simplifier ce problème d'abord.''
 
--- ``D'accord, ça me parait rapide à faire.''
+--- ``D'accord, ça me parait rapide à faire.''
 
+\stardelimiter{}
 
-Les algorithmes génétiques sont des programmes extraordinaires qui font partie de la classe des méta-heuristiques -- alias algorithme tout terrain pour les intimes. 
-Ils sont capables de résoudre un problème sans vraiment en connaître les caractéristiques, et fonctionnent grâce aux dures loi de l'évolution mises en lumière par Darwin -- en particulier la sélection naturelle. 
+Les algorithmes génétiques sont des programmes extraordinaires qui font partie de la classe des méta-heuristiques, alias algorithmes tout terrain pour les intimes. 
+Ils sont capables de résoudre un problème sans vraiment en connaître les caractéristiques et fonctionnent grâce aux dures loi de l'évolution mises en lumière par Darwin -- en particulier la sélection naturelle. 
 L'algorithme semble aussi fou qu'il est efficace.
 Son fonctionnement peut être très simple à décrire: 
-Imaginons que l'on tape plusieurs textes totalement aléatoire, en jetant des billes sur un clavier par exemple.
+Imaginons que l'on tape plusieurs textes totalement aléatoires, en jetant des billes sur un clavier par exemple.
 Prenons alors tous ces textes pour les faire lire à une communauté de lecteurs passionnés, qui va objectivement leur donner une note.
 Reprenons ensuite les textes un par un, lançons une pièce, et s'il s'agit d'un pile, modifions aléatoirement une lettre dans le texte.
 Sélectionnons alors les meilleurs textes, découpons une partie dans chacun d'entre eux, que l'on échange avec un autre texte considéré meilleur que les autres.
 Puis on recommence le processus: c'est un vrai bazar. 
 Et pourtant, c'est exactement ce que font les algorithmes génétiques.
-Et évidemment, c'est diaboliquement efficace, sous réserve que la communauté de lecteur sache correctement noter les textes -- et dispose de suffisamment de café pour supporter la lecture.
+Et évidemment, c'est diaboliquement efficace, sous réserve que la communauté de lecteurs sache correctement noter les textes -- et dispose d'un mental d'acier pour lire tous ces pseudo-textes.
 %TODO: exemple robot qui se combattent ? si il y a de la place
+
+\stardelimiter{}
 
 %TODO: Separator line
 Il est déjà 19 heures, j'ai réuni toutes les sources dont j'ai besoin pour mon projet. 
@@ -103,22 +120,22 @@ et j'étais assez content d'être tombé dessus.
 Lorsque j'avais choisi mon sujet, en fin de première année de prépa, j'avais été aidé par un ami, maintenant en thèse d'apprentissage et robotique.
 Après un long brainstorming sur comment développer le sujet imposé cette année, j'avais fait ressortir deux projets assez imposants.
 Le premier, c'était bien sûr celui sur la planification aérienne. 
-Quant au second, il s'agissait encore d'un problème d'otpimisation, mais qui demandait de développer une intelligence à base de réseau de neurones pour optimiser la consommation énergétique des datacenters, à l'instar de ce que fait Google.
+Quant au second, il s'agissait encore d'un problème d'otpimisation, mais qui demandait de développer une intelligence à base de réseaux de neurones pour optimiser la consommation énergétique des datacenters, à l'instar de ce que fait Google.
 
 J'ai acheté des livres également, \textit{A Field Guide to Genetic Programming} qui risique de m'accompagner longtemps.
-Mais je m'étais également intéressé au livre de Cédric Villani, \textit{Théorème Vivant}, pour renouer avec mon envie de faire des maths et enfin lire son travail de vulgarisation et ses talents d'écrivains. 
-Mmmmh, l'heure tourne, je devrais peut être dormir, cette semaine encore va être longue à vivre\dots
+Mais je m'étais également intéressé au livre de Cédric Villani, \textit{Théorème Vivant}, pour renouer avec mon envie de faire des maths et enfin lire son travail de vulgarisation. 
+Mmmmh, l'heure tourne, je devrai peut être dormir, cette semaine encore va être longue à vivre\dots
 
 %TODO Separator line
 Toujours aucune issue en vue!
-Je cherche désespérément comment améliorer mon sujet et le rendre intéressant, je n'arriverais pas à le présenter autrement!
+Je cherche désespérément comment améliorer mon sujet et le rendre intéressant, je n'arriverai pas à le présenter autrement!
 Pourtant je ne l'ai même pas encore commencé, l'enthousiasme que j'avais en choisissant ce projet s'est très vite envolé avec le début de cette année.
 Enfin bon, pas le temps de culpabiliser, là tout de suite, c'est pause détente. 
 
 La cafétéria du lycée est toujours autant peuplée, mais le flux s'estompe progressivement lorsque les lycéens ont trouvé de quoi manger et qu'ils retournent travailler. 
 De mon côté, je continue de lire \textit{A Field Guide to Genetic Programming}, cette passion-là ne s'est pas arrêté au moins.
 % FIXME : le -- est pas génial pour écrire
-Un de mon trinôme -- ce groupe composé de trois amis soudés pour affronter les examens au tableau deux fois par semaine -- commence à s'intéresser un peu à ce que je fais.
+Un de mes co-trinômes -- ce groupe composé de trois amis soudés pour affronter les examens au tableau deux fois par semaine -- commence à s'intéresser un peu à ce que je fais.
 
 --- ``C'est pour ton TIPE, non?''
 
@@ -134,18 +151,15 @@ Un de mon trinôme -- ce groupe composé de trois amis soudés pour affronter le
 
 --- ``C'est assez atypique comme antenne, en effet!''
 
---- ``Là aussi, il y a un autre exemple avec la génération de circuit électrique pour obtenir une certaine fonctionnalité, et ça doit être possible de 			forcer l'algorithme pour qu'il réalise des circuits de taille minimale.''
+--- ``Là aussi, il y a un autre exemple avec la génération de circuits électriques pour obtenir une certaine fonctionnalité, et ça doit être possible de 			forcer l'algorithme pour qu'il réalise des circuits de taille minimale.''
 
 Me voilà reparti dans ma lecture.
+
+\stardelimiter{}
 
 %TODO: texte avec l'image de l'antenne et une explication du travail de Holand et ...
 
 %TODO: ligne horizontal
-
-
-
-
-
 
 }
 \end{document}
