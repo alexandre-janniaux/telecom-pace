@@ -10,6 +10,7 @@
 \usepackage[left=1.5in,right=0.5in,top=0.98in,bottom=.525in]{geometry}
 
 \usepackage{mathrsfs}
+\usepackage{textpos}
 
 \usetikzlibrary{calc}
 \usetikzlibrary{shapes}
@@ -19,6 +20,12 @@
 %\tikzstyle{output} = [fill=white]
 
 \newcommand{\stardelimiter}{{\begin{center}\vspace{0.3cm} $\star \star \star$\vspace{0.25cm}\end{center}}}
+
+\newcommand{\datemarge}[1]{%
+    \begin{textblock}{3}(-3.1,0)
+        #1
+    \end{textblock}
+}
 
 %\renewcommand{\rmdefault}{augie}
 %\fontfamily{French Cursive}
@@ -38,9 +45,10 @@
 
   \include{config/background}
   
-  {\setstretch{1.963}
+  {\setstretch{1.960}
   %\setstretch{2.1}
       \vspace{0pt}%\cursive{}
+      \datemarge{Le 12 octobre}
 Longue attente devant la porte de la salle de cours. 
 Je discute non sans anxiété avec d'autres élèves de ma classe préparatoire --- taupins dans notre jargon --- qui vont bientôt subir le même sort que moi.
 Quelle sensation étrange d'être anxieux pour la présentation d'un sujet que l'on connait probablement mieux que les autres?
