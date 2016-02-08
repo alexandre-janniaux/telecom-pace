@@ -1,12 +1,15 @@
 \documentclass[letterpaper, 12pt]{report} % for letter size paper
 % 215.9mm × 279.4mm
 
+\usepackage{ifxetex}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage[french]{babel}
 
+\usepackage[french]{babel}
 \usepackage{tikz, background, titling, kantlipsum, setspace}
-\usepackage[left=1.5in,right=0.25in,top=0.98in,bottom=.525in]{geometry}
+\usepackage[left=1.5in,right=0.5in,top=0.98in,bottom=.525in]{geometry}
+
+\usepackage{mathrsfs}
 
 \usetikzlibrary{calc}
 \usetikzlibrary{shapes}
@@ -15,9 +18,13 @@
 \tikzstyle{line} = [draw, text centered]
 %\tikzstyle{output} = [fill=white]
 
-\newcommand{\stardelimiter}{{\begin{center}\vspace{0.3cm} $\star \star \star$\vspace{0.3cm}\end{center}}}
+\newcommand{\stardelimiter}{{\begin{center}\vspace{0.3cm} $\star \star \star$\vspace{0.25cm}\end{center}}}
 
-\renewcommand{\rmdefault}{augie}
+%\renewcommand{\rmdefault}{augie}
+%\fontfamily{French Cursive}
+\usepackage{frcursive}
+
+\renewcommand{\rmdefault}{frc}
 
 \title{Quand la logique s'en mêle}
 \author{Alexandre Janniaux}
@@ -31,51 +38,53 @@
 
   \include{config/background}
   
-{\setstretch{1.963}\vspace{0pt}
+  {\setstretch{1.963}
+  %\setstretch{2.1}
+      \vspace{0pt}%\cursive{}
 Longue attente devant la porte de la salle de cours. 
 Je discute non sans anxiété avec d'autres élèves de ma classe préparatoire --- taupins dans notre jargon --- qui vont bientôt subir le même sort que moi.
 Quelle sensation étrange d'être anxieux pour la présentation d'un sujet que l'on connait probablement mieux que les autres?
 
 Ça y est, la porte s'ouvre, je rentre. Un petit regard vers l'autre table, où l'on parle beaucoup trop physique pour mon esprit d'informaticien, et je m'asseois en face de mon professeur de mathématiques.
 
---- ``Bonjour Alexandre, comment allez vous?''
+--- «Bonjour Alexandre, comment allez vous?»
 % TODO: image M.Pauly
 
 Si l'on vous dit un jour, comme pour moi, que les professeurs du Lycée du Parc sont arrogants, méprisants, et ne font qu'essayer de vous écraser, vous rierez de voir cette descritpion tomber devant ce professeur.
 
 
 % FIXME: Typo Dialogue
---- ``Venons-en à ce pourquoi vous êtes ici, racontez-moi ce que vous faîtes''
+--- «Venons-en à ce pourquoi vous êtes ici, racontez-moi ce que vous faîtes»
 
---- ``Oui! J'ai choisi un sujet d'informatique sur l'optimisation de la planification aérienne. On part d'un certain nombre d'avions, d'aéroports et de clients, et il faut trouver les meilleures configurations des vols en fonction de plusieurs critères.''
+--- «Oui! J'ai choisi un sujet d'informatique sur l'optimisation de la planification aérienne. On part d'un certain nombre d'avions, d'aéroports et de clients, et il faut trouver les meilleures configurations des vols en fonction de plusieurs critères.»
 
---- ``C'est ambitieux comme sujet, vous savez comment vous y prendre?'' % FIXME : lyon "y"
+--- «C'est ambitieux comme sujet, vous savez comment vous y prendre?» % FIXME : lyon "y"
 
---- ``En réalité, j'ai surtout choisi ce sujet comme prétexte à l'utilisation d'algorithmes génétiques.''
+--- «En réalité, j'ai surtout choisi ce sujet comme prétexte à l'utilisation d'algorithmes génétiques.»
 
---- ``Et vous avez déjà codé ce genre d'algorithme?.''
+--- «Et vous avez déjà codé ce genre d'algorithme?.»
 
---- ``Oui, évidemment.''
+--- «Oui, évidemment.»
 
 Pas besoin de dire que c'est le stress qui a répondu à ma place, même si j'aurai été capable d'expliquer comment cela fonctionne. 
 
---- ``Dans l'état actuel, une seule chose m'inquiète. 
-		J'ai l'impression que je ne fais rien de théorique, et qu'expliquer le fonction de ces algorithmes sera non seulement pauvre, mais me prendra aussi tout mon temps de parole.''
+--- «Dans l'état actuel, une seule chose m'inquiète. 
+		J'ai l'impression que je ne fais rien de théorique, et qu'expliquer le fonction de ces algorithmes sera non seulement pauvre, mais me prendra aussi tout mon temps de parole.»
 
---- ``Qu'est-ce que vous aimeriez ajouter?''
+--- «Qu'est-ce que vous aimeriez ajouter?»
 
---- ``J'avais l'idée de mieux formaliser l'algorithme dans ce cas là et de montrer que l'on converge probablement vers un optimum.''
+--- «J'avais l'idée de mieux formaliser l'algorithme dans ce cas là et de montrer que l'on converge probablement vers un optimum.»
 
---- ``Vous savez, il vous reste beaucoup de temps, et vous n'avez pas encore énormément de recul sur votre projet.
+--- «Vous savez, il vous reste beaucoup de temps, et vous n'avez pas encore énormément de recul sur votre projet.
 		Attendez un peu: à force de vivre avec le problème, vous serez à même de l'expliquer clairement et rapidement.
-		Essayez de simplifier ce problème d'abord.''
+		Essayez de simplifier ce problème d'abord.»
 
---- ``D'accord, ça me parait rapide à faire.''
+--- «D'accord, ça me parait rapide à faire.»
 
 \stardelimiter{}
 
 Les algorithmes génétiques sont des programmes extraordinaires qui font partie de la classe des méta-heuristiques, alias algorithmes tout terrain pour les intimes. 
-Ils sont capables de résoudre un problème sans vraiment en connaître les caractéristiques et fonctionnent grâce aux dures loi de l'évolution mises en lumière par Darwin -- en particulier la sélection naturelle. 
+Ils sont capables de résoudre un problème sans vraiment en connaître les caractéristiques et fonctionnent grâce aux dures loi de l'évolution mises en lumière par Darwin, en particulier la sélection naturelle. 
 L'algorithme semble aussi fou qu'il est efficace.
 Son fonctionnement peut être très simple à décrire: 
 Imaginons que l'on tape plusieurs textes totalement aléatoires, en jetant des billes sur un clavier par exemple.
@@ -84,7 +93,7 @@ Reprenons ensuite les textes un par un, lançons une pièce, et s'il s'agit d'un
 Sélectionnons alors les meilleurs textes, découpons une partie dans chacun d'entre eux, que l'on échange avec un autre texte considéré meilleur que les autres.
 Puis on recommence le processus: c'est un vrai bazar. 
 Et pourtant, c'est exactement ce que font les algorithmes génétiques.
-Et évidemment, c'est diaboliquement efficace, sous réserve que la communauté de lecteurs sache correctement noter les textes -- et dispose d'un mental d'acier pour lire tous ces pseudo-textes.
+Et évidemment, c'est diaboliquement efficace, sous réserve que la communauté de lecteurs sache correctement noter les textes, et dispose d'un mental d'acier pour lire tous ces pseudo-textes.
 %TODO: exemple robot qui se combattent ? si il y a de la place
 
 \stardelimiter{}
@@ -112,23 +121,23 @@ Enfin bon, pas le temps de culpabiliser, là tout de suite, c'est pause détente
 La cafétéria du lycée est toujours autant peuplée, mais le flux s'estompe progressivement lorsque les lycéens ont trouvé de quoi manger et qu'ils retournent travailler. 
 De mon côté, je continue de lire \textit{A Field Guide to Genetic Programming}, cette passion-là ne s'est pas arrêté au moins.
 % FIXME : le -- est pas génial pour écrire
-Un de mes co-trinômes -- ce groupe composé de trois amis soudés pour affronter les examens au tableau deux fois par semaine -- commence à s'intéresser un peu à ce que je fais.
+Un de mes co-trinômes --- ce groupe composé de trois amis soudés pour affronter les examens au tableau deux fois par semaine --- commence à s'intéresser un peu à ce que je fais.
 
---- ``C'est pour ton TIPE, non?''
+--- «C'est pour ton TIPE, non?»
 
---- ``Oui\dots en quelque sorte! il faut que j'utilise ces algorithmes pour un problème d'optimisation.''
+--- «Oui\dots en quelque sorte! il faut que j'utilise ces algorithmes pour un problème d'optimisation.»
 
---- ``J'en ai déjà entendu parler, mais je n'ai jamais compris comment ça fonctionnait, finalement.''
+--- «J'en ai déjà entendu parler, mais je n'ai jamais compris comment ça fonctionnait, finalement.»
 
---- ``C'est assez simple, tu pars d'une population de solution initiale arbitraire, et tu la fais évoluer en fusionnant les caractéristiques chez les 			bons individus et en gardant les meilleurs, en gros.''
+--- «C'est assez simple, tu pars d'une population de solution initiale arbitraire, et tu la fais évoluer en fusionnant les caractéristiques chez les 			bons individus et en gardant les meilleurs, en gros.»
 
---- ``Ah oui\dots et tu peux t'en servir pour n'importe quoi, du moment que tu peux représenter les individus?''
+--- «Ah oui\dots et tu peux t'en servir pour n'importe quoi, du moment que tu peux représenter les individus?»
 
---- ``Pas seulement, il faut aussi avoir une bonne fonction pour leur attribuer des notes, qui soit suffisamment expressive sans demander trop de temps. 		Mais ça a été utilisé pour faire des antennes pour la {NASA}. Attends je dois avoir une photo quelque part\dots là, voilà!''
+--- «Pas seulement, il faut aussi avoir une bonne fonction pour leur attribuer des notes, qui soit suffisamment expressive sans demander trop de temps. 		Mais ça a été utilisé pour faire des antennes pour la {NASA}. Attends je dois avoir une photo quelque part\dots là, voilà!»
 
---- ``C'est assez atypique comme antenne, en effet!''
+--- «C'est assez atypique comme antenne, en effet!»
 
---- ``Là aussi, il y a un autre exemple avec la génération de circuits électriques pour obtenir une certaine fonctionnalité, et ça doit être possible de 			forcer l'algorithme pour qu'il réalise des circuits de taille minimale.''
+--- «Là aussi, il y a un autre exemple avec la génération de circuits électriques pour obtenir une certaine fonctionnalité, et ça doit être possible de 			forcer l'algorithme pour qu'il réalise des circuits de taille minimale.»
 
 Me voilà reparti dans ma lecture.
 
