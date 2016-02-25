@@ -172,6 +172,57 @@ Me voilà reparti dans ma lecture.
 %\vspace{0.36cm}
 
 \newpage
+
+\datemarge{Le}%FIXME
+
+Ah les mardis, quelle épreuve! 
+Encore une fois, impossible de rester concentré sur le cours en informatique, malgré mon intérêt pour le sujet!
+C'est ce qui arrive lorsque c'est devenu le jour où l'on mange beaucoup entre amis.
+Bon, après tout, ca reste assez agréable d'avori cette pause de deux heures le midi: la sensation typique de ne pas avoir de temps des classes préparatoires s'évanouit dans un bon moment de détente et permet d'assurer une forme correcte tous les jours.
+Mais je suis totalement incapable de suivre ce cours de logique sans me laisser distraire!
+Je regarde le cours qu'on nous a donné: forme normale conjonctive, lois de De Morgan, table de vérité, évaluation\dots
+Mouais, c'est quand même pas très sexy comme sujet de toute façon, et ça n'a pas l'air très dur à travailler.
+Pendant que je surligne les passages importants sur le cours livré en diapopsitives imprimées, j'essaye d'imaginer de quelle façon présenter mon projet:
+il me faut non seulement des idées pour la rendre vivante, avec des expériences et applications concrêtes et sympatique, mais également que je puisse montrer ma connaissance du sujet.
+C'est une dure affaire de timing que de faire tout ça en seulement dix minutes, ou quarantes si je réussis à passer les \majuscule{ENS}.
+Eventuellement, je n'ai qu'à présenter les résultats en mentionnant que je l'ai résolu avec un algorithme génétique, et présenter d'autres résultats théoriques sur le problème ou encore la convergence du programme?
+Ça me donne l'impression de bidouiller ma présentation pour que ça colle à ce qu'on me demande, ça ne me plaît pas trop.
+Ou alors, je mentionne plusieurs fois que j'ai travaillé sur le côté théorique et je profite du temps alloué pour les questions pour développer selon ce qui intéresse le jury?
+Mmmh, pari risqué encore une fois.
+
+C'est fou que je n'ai toujours pas la moindre idée de comment présenter ça après tout ce temps, même si j'en ai encore beaucoup.
+
+Hop reprise du cours, je parle encore avec mon co-trinôme.
+\begin{dialogue}
+    \sentence{Ce sont presque que des choses qu'on fait en sciences de l'ingénieur en terminale}.
+    \sentence{Oui, je crois même qu'on fait ça en classe de sup aussi.}
+    \sentence{En plus, c'est plutôt intuitif. De Morgan, par exemple, c'est juste une histoire de Français.}
+    \sentence{Ah, je la connais par c\oe{}ur moi, c'est tout. Je sais juste que c'est ça.}
+\end{dialogue}
+
+Il écrit la formule sur le cours pour me la montrer, je suis assez étonné de sa réponse.
+%FIXME 
+%TODO : afficher la formule
+\begin{dialogue}
+    \sentence{Mais tu ne l'interprête pas du tout comme du Français?}
+    \sentence{Non? Pourquoi, comment est-ce que tu l'interprêtes toi?}
+    \sentence{garde, le membre de gauche, c'est que tu n'as aucun de A ou B, et le membre de droite, que tu n'as ni A, ni B. C'est un peu de la distributivité de la négation si tu l'exprimes en Français.}
+    \sentence{Ah\dots Oui\dots C'est assez cool en fait! Et tu as déjà vu les tableaux de Karnaugh?}
+    \sentence{Carnot? Pour la thermodynamique?}
+    \sentence{Non, non, pas ce Carnot-là. Celui pour simplifier les expressions logique.}
+    \sentence{Ça me dit quelque chose, peut-être que j'en ai entendu parler en \majuscule{SI} l'année dernière.}
+    \sentence{Regarde. Je te le montre avec quatres variables. Avec plus c'est plus vraiment pratique. Tu fais un tableau à deux entrées. Tu mets tes variables ici et là, tu mets le résultat du calcul ici, et tu fais des paquets avec tous les 1 pour avoir la forme simplifiée.}
+    \sentence{Euh\dots oui, mais comment tu remplis ce tableau?}
+    \sentence{Il suffit de faire le calcul entre les différentes variables.}%TODO
+    \sentence{Mmmh, oui, d'accord, et pour les 1, pourquoi tu ne fais pas des lignes de trois 1 ici, ça fait moins de blocs!}
+    \sentence{Il faut que ton rectangle ait des côtés de longueur une puissance de deux pour que ça marche, mais par contre ton tableau est comme une sphere, tu peux faire un carré avec les 4 coins ou le commencer sur un bord et prendre l'autre bord avec.}
+    \sentence{Mmmh, d'accord.}
+\end{dialogue}
+
+J'espère qu'il ne le saura pas, mais je n'ai pas compris grand chose à son tableau. 
+Ça ressemble plus à de l'informagie vaudou qu'à une vraie technique de minimisation pour moi, et il y a beaucoup de contraintes étranges sur la réalisation du tableau.
+Néanmoins, je garde cette technique en tête, il faudra que je revienne dessus lorsque j'aurais un peu plus de temps.
+
 \datemarge{Le 26 décembre}
 
 
@@ -187,7 +238,17 @@ Il faut seulement que je me débarasse de cette impression de ne rien faire moi-
 
 Je suis encore sur Internet, l'autoplay de youtube a fini par m'amener de vidéos d'algorithmes génétiques appliqués au jeu vidéo, à des vidéos de pendule doubles --- à deux tiges --- asservi par un moteur. 
 \end{comment}
+%FIXME: date, séparer en deux ou pas ?
+Enfin les vacances de Nöel, je ne prendrai pas plus de travail en retard que ce que j'ai déjà. 
+En revanche, pas le temps de souffler, j'ai beaucoup à faire, et je veux comme cer à programmer le c\oe{}ur du solveur pour le projet.
+Mais je ne m'empêche pas de regarder quelques vidéos intéressantes, surtout que c'est à propos de mon sujet favori.
+Je regarde une vidéo de démonstration mélangeant réseaux de neurones et algorithmes génétiques afin d'entrainer deux créatures au comportement simplifié à se battre.
+%TODO: image + développer
 
+La vidéo suivante m'interpèle également.
+Il s'agit encore du même type de système, mais pour entrainer une créature à sauter le plus loin possible, avec des membres définis par l'utilisateur avant la simulation.
+C'est assez incroyable de voir à quel point cela fonctionne bien.
+Les créatures ne savent rien de leur environnement, et ne savent pas comment elles fonctionnent au début de la simulation, mais finissent par avoir un comportement «rationnel» de manière naturelle.
 
 
 
