@@ -19,18 +19,21 @@
 \tikzstyle{line} = [draw, text centered]
 %\tikzstyle{output} = [fill=white]
 
+\definecolor{textcolorPencil}{rgb}{0.99,0.69,0.07}
+
+
 \newcommand{\stardelimiter}{{\begin{center}\vspace{0.3cm} $\star \star \star$\vspace{0.25cm}\end{center}}}
 
 \newcommand{\datemarge}[1]{%
     \begin{textblock}{3}(-3.1,0)
-        #1
+        {\color{blue}#1}
     \end{textblock}
 }
 
 %\renewcommand{\rmdefault}{augie}
 %\fontfamily{French Cursive}
 \usepackage{frcursive}
-
+\DeclareTextFontCommand{\helvetica}{\fontfamily{phv}\selectfont}
 \renewcommand{\rmdefault}{frc}
 
 \title{Quand la logique s'en mêle}
@@ -38,14 +41,14 @@
 
 \begin{document}
   %\pagestyle{empty}
-  \doublespacing{}
+\doublespacing{}
   %\kant[1-6]{}
 
   \maketitle
 
   \include{config/background}
   
-  {\setstretch{1.960}
+  {\setstretch{1.963} %\color{textcolorPencil}
   %\setstretch{2.1}
       \vspace{0pt}%\cursive{}
       \datemarge{Le 12 octobre}
@@ -116,7 +119,7 @@ Après un long brainstorming sur comment développer le sujet imposé cette ann�
 Le premier, c'était bien sûr celui sur la planification aérienne. 
 Quant au second, il s'agissait encore d'un problème d'otpimisation, mais qui demandait de développer une intelligence à base de réseaux de neurones pour optimiser la consommation énergétique des datacenters, à l'instar de ce que fait Google.
 
-J'ai acheté des livres également, \textit{A Field Guide to Genetic Programming} qui risique de m'accompagner longtemps.
+J'ai acheté des livres également, \textit{A Field Guide to Genetic Programming} qui risque de m'accompagner longtemps.
 Mais je m'étais également intéressé au livre de Cédric Villani, \textit{Théorème Vivant}, pour renouer avec mon envie de faire des maths et enfin lire son travail de vulgarisation. 
 Mmmmh, l'heure tourne, je devrai peut être dormir, cette semaine encore va être longue à vivre\dots
 
@@ -137,21 +140,74 @@ Un de mes co-trinômes --- ce groupe composé de trois amis soudés pour affront
 
 --- «J'en ai déjà entendu parler, mais je n'ai jamais compris comment ça fonctionnait, finalement.»
 
---- «C'est assez simple, tu pars d'une population de solution initiale arbitraire, et tu la fais évoluer en fusionnant les caractéristiques chez les 			bons individus et en gardant les meilleurs, en gros.»
+--- «C'est assez simple, tu pars d'une population de solution initiale arbitraire, et tu la fais évoluer en fusionnant les caractéristiques chez les bons individus et en gardant les meilleurs, en gros.»
 
 --- «Ah oui\dots et tu peux t'en servir pour n'importe quoi, du moment que tu peux représenter les individus?»
 
---- «Pas seulement, il faut aussi avoir une bonne fonction pour leur attribuer des notes, qui soit suffisamment expressive sans demander trop de temps. 		Mais ça a été utilisé pour faire des antennes pour la {NASA}. Attends je dois avoir une photo quelque part\dots là, voilà!»
+--- «Pas seulement, il faut aussi avoir une bonne fonction pour leur attribuer des notes, qui soit suffisamment expressive sans demander trop de temps. Mais ça a été utilisé pour faire des antennes pour la {NASA}. Attends je dois avoir une photo quelque part\dots là, voilà!»
 
 --- «C'est assez atypique comme antenne, en effet!»
 
---- «Là aussi, il y a un autre exemple avec la génération de circuits électriques pour obtenir une certaine fonctionnalité, et ça doit être possible de 			forcer l'algorithme pour qu'il réalise des circuits de taille minimale.»
+--- «Là aussi, il y a un autre exemple avec la génération de circuits électriques pour obtenir une certaine fonctionnalité, et ça doit être possible de forcer l'algorithme pour qu'il réalise des circuits de taille minimale.»
 
 Me voilà reparti dans ma lecture.
+
+\vspace{-0.1cm}
 
 \stardelimiter{}
 
 %TODO: texte avec l'image de l'antenne et une explication du travail de Holand et ...
+\vspace{0.1cm}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=13cm]{GeneticallyGrownAntennas_NASA-web.png} %TODO source 
+    \caption{Antennes obtenues par évolution génétique}
+\end{figure}
+
+\vspace{-1cm}
+
+\stardelimiter{}
+
+%\vspace{0.36cm}
+
+\newpage
+\datemarge{Le 26 décembre}
+
+
+\begin{comment}
+%TODO: réécrire cette partie
+Aujourd'hui, je ne sais vraiment plus quoi faire pour ce projet, rien ne correspond à ce que je veux.
+J'ai fini par penser que je n'arriverai pas à terminer à temps.
+Il est temps de prendre des mesures pour améliorer cela.
+%TODO expliquer pourquoi
+Peut être faire un projet en physique, c'est censé être plus facile? Si seulement je pouvais en comprendre quelque chose!
+Ou alors un sujet de mathématiques? 
+Il faut seulement que je me débarasse de cette impression de ne rien faire moi-même. 
+
+Je suis encore sur Internet, l'autoplay de youtube a fini par m'amener de vidéos d'algorithmes génétiques appliqués au jeu vidéo, à des vidéos de pendule doubles --- à deux tiges --- asservi par un moteur. 
+\end{comment}
+
+
+
+
+
+\helvetica{[SUITE A FAIRE ET RETRAVAILLER]} % TODO
+ 
+\newpage
+\hfill\vspace{-0.5cm}
+\datemarge{février}
+%Les mardis sont souvent une très grande épreuve à vivre. 
+%+nourriture
+%+ecoute peu attentive
+%+parler avec antonin
+%+tableau de karnaugh
+%+"premiere introduction à la logique"
+
+%\stardelim{}
+
+%
+
 
 %TODO: ligne horizontal
 
