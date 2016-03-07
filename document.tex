@@ -33,21 +33,27 @@
 
 \newcommand{\datemarge}[1]{%
    \newpage
+   
+%   \begin{flushright}
     %\begin{textblock}{3}(-3.1,0)
-        {\color{blue}#1}
+        {\hfill{\color{blue}#1}}
     %\end{textblock}
+%   \end{flushright}
 
 }
 
 %\renewcommand{\rmdefault}{augie}
 %\fontfamily{French Cursive}
 \usepackage{frcursive}
+%\newcommand{\frcursive@enc}{T1}
 \DeclareTextFontCommand{\helvetica}{\fontfamily{phv}\selectfont}
-\renewcommand{\rmdefault}{frc}
 
-\newcommand{\majuscule}[1]{\emph{\texttt{#1}}}
+%\renewcommand{\rmdefault}{frc}
+
+\newcommand{\majuscule}[1]{{\large \texttt{#1}}}
 \newcommand{\sentence}[1]{\item «#1»}
 \newenvironment{dialogue}{\begin{itemize}}{\end{itemize}}
+
 
 
 \title{Quand la logique s'en mêle}
@@ -58,13 +64,31 @@
 \doublespacing{}
   %\kant[1-6]{}
 
-  \maketitle
+  \backgroundsetup{
+  scale=1,
+color=black,
+opacity=1,
+angle=0,
+contents={%
+  \includegraphics[width=\paperwidth,height=\paperheight]{cover}
+  }%
+  }
+  \BgThispage\null\thispagestyle{empty}
+
+  \vfill
+  \begin{flushright}
+  	{\Large Alexandre JANNIAUX}\hspace*{2cm}
+  \end{flushright}
+  \clearpage  
+  \newpage
+  
 
   \include{config/background}
-  
+  \begin{cursive}
   {\setstretch{1.963} %\color{textcolorPencil}
-  %\setstretch{2.1}
-      \vspace{0pt}%\cursive{}
+  %\setstretch{2.5}
+      \vspace{0pt}
+      %\cursive
 
       %TODO: petite introduction du but de ce cahier, mettre une photo du cahier réel à la fin.
 
@@ -80,7 +104,7 @@ Quelle sensation étrange d'être anxieux pour la présentation d'un sujet que l
 \end{dialogue}
 % TODO: image M.Pauly
 
-Si l'on vous dit un jour, comme pour moi, que les professeurs du Lycée du Parc sont arrogants, méprisants, et ne font qu'essayer de vous écraser, vous rierez de voir cette descritpion tomber devant ce professeur.
+Si l'on vous dit un jour, comme pour moi, que les professeurs du Lycée du Parc sont arrogants, méprisants, et ne font qu'essayer de vous écraser, vous rierez de voir cette description tomber à l'eau devant ce professeur.
 
 
 % FIXME: Typo Dialogue
@@ -129,7 +153,7 @@ Puis on recommence le processus: c'est un vrai bazar.
 Et pourtant, c'est exactement ce que font les algorithmes génétiques.
 Et évidemment, c'est diaboliquement efficace, sous réserve que la communauté de lecteurs sache correctement noter les textes, et dispose d'un mental d'acier pour lire tous ces pseudo-textes.
 %TODO: exemple robot qui se combattent ? si il y a de la place
-
+%TODO: exemple de la procédure des algorithmes génétiques
 \stardelimiter{}
 
 \datemarge{Le 1er novembre 2014}
@@ -144,8 +168,8 @@ Après un long brainstorming sur comment développer le sujet imposé cette ann�
 Le premier, c'était bien sûr celui sur la planification aérienne. 
 Quant au second, il s'agissait encore d'un problème d'optimisation, mais qui demandait de développer une intelligence à base de réseaux de neurones pour optimiser la consommation énergétique des datacenters, à l'instar de ce que fait Google.
 
-J'ai acheté des livres également, \textit{A Field Guide to Genetic Programming} qui risque de m'accompagner longtemps.
-Mais je m'étais également intéressé au livre de Cédric Villani, \textit{Théorème Vivant}, pour renouer avec mon envie de faire des maths et enfin lire son travail de vulgarisation. 
+J'ai acheté des livres également, \textsl{A Field Guide to Genetic Programming} qui risque de m'accompagner longtemps.
+Mais je m'étais également intéressé au livre de Cédric Villani, \textsl{Théorème Vivant}, pour renouer avec mon envie de faire des maths et enfin lire son travail de vulgarisation. 
 Mmmmh, l'heure tourne, je devrai peut être dormir, cette semaine encore va être longue à vivre\dots
 
 \datemarge{Le 24 novembre 2014}
@@ -157,7 +181,7 @@ Pourtant je ne l'ai même pas encore commencé, l'enthousiasme que j'avais en ch
 Enfin bon, pas le temps de culpabiliser, là tout de suite, c'est pause détente. 
 
 La cafétéria du lycée est toujours autant peuplée, mais le flux s'estompe progressivement lorsque les lycéens ont trouvé de quoi manger et qu'ils retournent travailler. 
-De mon côté, je continue de lire \textit{A Field Guide to Genetic Programming}, cette passion-là ne s'est pas arrêtée au moins.
+De mon côté, je continue de lire \textsl{A Field Guide to Genetic Programming}, cette passion-là ne s'est pas arrêtée au moins.
 % FIXME : le -- est pas génial pour écrire
 Un de mes co-trinômes --- ce groupe composé de trois amis soudés pour affronter les examens au tableau deux fois par semaine --- commence à s'intéresser un peu à ce que je fais.
 
@@ -183,20 +207,18 @@ Me voilà reparti dans ma lecture.
 
 \vspace{-0.1cm}
 
-\stardelimiter{}
 
 %TODO: texte avec l'image de l'antenne et une explication du travail de Holand et des algorithmes génétiques.
 \vspace{0.1cm}
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=13cm]{GeneticallyGrownAntennas_NASA-web.png} %TODO source 
+    \includegraphics[width=8cm]{GeneticallyGrownAntennas_NASA-web.png} %TODO source 
     \caption{Antennes obtenues par évolution génétique}
 \end{figure}
 
 \vspace{-1cm}
 
-\stardelimiter{}
 
 %\vspace{0.36cm}
 
@@ -371,6 +393,15 @@ La classe \majuscule{P} contient les problèmes qui ne deviennent pas trop diffi
 Il est assez évident, lorsqu'on est assez familier, de voir que \majuscule{P} fait déjà partie de \majuscule{NP}, et même que l'on pourrait construire une hiérarchie, répondant au nom de «hiérarchie polynomiale», en considérant des presque-machines qui font comme si un problème normalement dans \majuscule{NP} était dans \majuscule{P} pour eux. 
 La question mise à prix est maintenant de savoir si \majuscule{P=NP} ou non, et les chercheurs sont plutôt d'avis que non\dots
 
+\newpage
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=9cm]{hierarchiepo.png} %TODO source 
+    \caption{La hiérarchie polynomiale}
+\end{figure}
+\newpage
+
+
 
 \datemarge{Le 18 février 2015} %TODO date
 
@@ -446,8 +477,23 @@ C'est comme un édifice assez solide sur lequel nous cherchons à poser de nouve
 Les chercheurs n'ont pas tous le même langage, et il faut pouvoir rendre le travail le plus élémentaire possible pour que tout devienne automatique, quitte à reconstruire une partie de l'édifice.
 Les notions doivent rester naturelles à l'esprit pour déconstruire la complexité.
 
+
+%TODO: manque le passage avec Hugo et Théo
+
+
 \datemarge{Le 4 juillet 2015}
 
+Moins d'une semaine encore avant de faire la présentation finale devant le jury de concours!
+Le stress est à son comble, mais je suis également dans le c\oe{}ur du sujet.
+J'ai lu et travaillé beaucoup d'articles de thèse sur la minimisation et les domaines qui me semblaient voisins, bien que cela sorte totalement du cadre du \majuscule{TIPE}.
+L'expérience m'intéresse beaucoup, je commence à visualiser de quelle manière je peux transformer le problème en une suite de problème bien plus simples à résoudre.
+Je n'ai plus qu'à finir ce programme qui met en \oe{}uvre toutes les idées que j'ai pu trouver. 
+
+Cela semble une tâche facile d'adapter un algorithme dans un langage de programmation.
+Il s'agit la plupart du temps de retranscription des concepts théoriques en les concepts du langage même, après avoir défini la façon dont les données étaient organisées dans la mémoire de l'ordinateur.
+Un peu comme une gigantesque équation, où chaque symbole renvoie à d'autres concepts particuliers, et dont l'ensemble permet de définir une relation entre deux visions différentes du même objet.
+
+Dans mon cas, le programme que j'écris résout beaucoup de problèmes différents avec beaucoup de cas particuliers qui sont traités séparément, et ce afin d'accélérer au maximum.
 
 
 
@@ -465,7 +511,7 @@ Je continue donc sur mon projet, suffisamment en confiance.
 Je connais par c\oe{}ur le moindre mot que je suis en train de dire, ainsi que ce qui va suivre, et j'ai déjà planifié quelques questions que le jury pourrait me poser.
 Et c'est suffisant pour que j'arrive vers la fin du sujet dans les temps.
 
-Je mets mon avant-dernier transparent, et commence à débiter mes dernières phrases, avant de voir que les examinateurs ont un sourire plus large que mon sujet lui-même.
+Je mets mon avant-dernier transparent, et commence à débiter mes dernières phrases, avant de voir que les examinateurs ont un sourire plus large que le thème de mon sujet lui-même.
 Je me retourne, et me rend compte que mon transparent\dots est opaque.
 \begin{dialogue}
 	\sentence{Essayez d'enlever la feuille en dessous du transparent, monsieur.}
@@ -474,23 +520,24 @@ Je me retourne, et me rend compte que mon transparent\dots est opaque.
 
 Et je termine les explications les plus avancées de mon \majuscule{TIPE} sans aucun support visuel, et sans désintéresser le jury. Parfait. La catastrophe est évitée. Et très peu de questions résistent à ce que j'ai appris. M.Pauly avait raison, j'ai réussi à vivre avec ce problème pour me l'approprier.
 
-\newpage
+\cleardoublepage\newpage\null %PUT ON A EVEN PAGE
 
-\newpage
+\clearpage
+	
 
-%Les mardis sont souvent une très grande épreuve à vivre. 
-%+nourriture
-%+ecoute peu attentive
-%+parler avec antonin
-%+tableau de karnaugh
-%+"premiere introduction à la logique"
+  \backgroundsetup{
+  scale=1,
+color=black,
+opacity=1,
+angle=0,
+contents={%
+  \includegraphics[width=\paperwidth,height=\paperheight]{backcover}
+  }%
+  }
+  \BgThispage\null\thispagestyle{empty}
 
-%\stardelim{}
+  \vfill
+  \clearpage  
 
-%
-
-
-%TODO: ligne horizontal
-
-}
+}\end{cursive}
 \end{document}
